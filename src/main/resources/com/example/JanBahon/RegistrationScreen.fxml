@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.JanBahon.RegistrationController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="TOP" layoutX="773.0" layoutY="56.0" prefHeight="52.0" prefWidth="230.0" style="-fx-background-color: #ffe100;" text="REGISTRATION" textAlignment="CENTER">
+         <font>
+            <Font name="Montserrat ExtraBold Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" layoutX="738.0" layoutY="162.0" prefHeight="45.0" prefWidth="300.0" promptText="EX. Alex">
+         <font>
+            <Font name="Open Sans Regular" size="12.0" />
+         </font>
+      </TextField>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="661.0" layoutY="174.0" prefHeight="22.0" prefWidth="75.0" text="USERNAME" textAlignment="CENTER">
+         <font>
+            <Font name="Roboto Condensed Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Label>
+      <TextField fx:id="password" layoutX="738.0" layoutY="276.0" prefHeight="45.0" prefWidth="300.0" promptText="EX. Alex123">
+         <font>
+            <Font name="Open Sans Regular" size="12.0" />
+         </font>
+      </TextField>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="661.0" layoutY="288.0" prefHeight="22.0" prefWidth="75.0" text="PASSWORD" textAlignment="CENTER">
+         <font>
+            <Font name="Roboto Condensed Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Label>
+      <TextField fx:id="phone" layoutX="738.0" layoutY="334.0" prefHeight="45.0" prefWidth="300.0" promptText="EX. 018959...">
+         <font>
+            <Font name="Open Sans Regular" size="12.0" />
+         </font>
+      </TextField>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="661.0" layoutY="345.0" prefHeight="22.0" prefWidth="75.0" text="PHONE" textAlignment="CENTER">
+         <font>
+            <Font name="Roboto Condensed Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Label>
+      <TextField fx:id="email" layoutX="738.0" layoutY="221.0" prefHeight="45.0" prefWidth="300.0" promptText="EX. Alex123@gmail.com">
+         <font>
+            <Font name="Open Sans Regular" size="12.0" />
+         </font>
+      </TextField>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="661.0" layoutY="233.0" prefHeight="22.0" prefWidth="75.0" text="EMAIL" textAlignment="CENTER">
+         <font>
+            <Font name="Roboto Condensed Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Label>
+      <TextField fx:id="address" layoutX="738.0" layoutY="395.0" prefHeight="45.0" prefWidth="300.0" promptText="EX. Road no-5, Block-A,Banasree,Dhaka.">
+         <font>
+            <Font name="Open Sans Regular" size="12.0" />
+         </font>
+      </TextField>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="661.0" layoutY="407.0" prefHeight="22.0" prefWidth="75.0" text="ADDRESS" textAlignment="CENTER">
+         <font>
+            <Font name="Roboto Condensed Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Label>
+      <TextField fx:id="nidNo" layoutX="738.0" layoutY="451.0" prefHeight="45.0" prefWidth="300.0" promptText="EX. 1317...">
+         <font>
+            <Font name="Open Sans Regular" size="12.0" />
+         </font>
+      </TextField>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="661.0" layoutY="463.0" prefHeight="22.0" prefWidth="75.0" text="NID No." textAlignment="CENTER">
+         <font>
+            <Font name="Roboto Condensed Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Label>
+      <Button fx:id="registarButton" layoutX="738.0" layoutY="549.0" mnemonicParsing="false" onAction="#OnActionRegister" prefHeight="45.0" prefWidth="300.0" style="-fx-background-color: #090B0B;" text="Register" textFill="WHITE">
+         <font>
+            <Font name="Montserrat ExtraBold" size="20.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label fx:id="loginLink" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="952.0" layoutY="608.0" onMouseClicked="#OnLoginLinkClicked" prefHeight="22.0" prefWidth="52.0" text="Login" textAlignment="CENTER" textFill="#80c8ff" underline="true">
+         <font>
+            <Font name="Open Sans Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Label>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="770.0" layoutY="608.0" prefHeight="22.0" prefWidth="191.0" text="Already have an account? " textAlignment="CENTER">
+         <font>
+            <Font name="Open Sans Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Label>
+      <AnchorPane layoutX="-4.0" prefHeight="720.0" prefWidth="450.0" style="-fx-background-color: #ffe100;">
+         <children>
+            <ImageView fitHeight="180.0" fitWidth="200.0" layoutX="137.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/cycle.gif" />
+               </image>
+            </ImageView>
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="115.0" layoutY="243.0" prefHeight="29.0" prefWidth="220.0" text="JAN BAHON" textAlignment="CENTER">
+               <font>
+                  <Font name="Montserrat ExtraBold Italic" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="110.0" layoutY="642.0" text="CC. All Right Reserved by Team NullPointer">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="197.0" layoutY="282.0" prefHeight="22.0" prefWidth="157.0" text="Makes Transportaion Easy">
+               <font>
+                  <Font name="Script MT Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
