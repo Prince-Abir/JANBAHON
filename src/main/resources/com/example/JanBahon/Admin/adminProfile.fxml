@@ -13,13 +13,13 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.JanBahon.AdminProfileController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #292929;">
          <children>
             <AnchorPane layoutX="31.0" layoutY="64.0" prefHeight="698.0" prefWidth="145.0" style="-fx-background-color: #ffbd22; -fx-background-radius: 12;">
                <children>
-                  <AnchorPane fx:id="createPostButton" layoutX="13.0" layoutY="28.0" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: white;">
+                  <AnchorPane layoutX="13.0" layoutY="28.0" onMouseClicked="#createPostButton" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="47.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -40,7 +40,7 @@
                         </DropShadow>
                      </effect>
                   </AnchorPane>
-                  <AnchorPane fx:id="cycleButton" layoutX="13.0" layoutY="94.0" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: white;">
+                  <AnchorPane layoutX="13.0" layoutY="94.0" onMouseClicked="#cycleButton" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="18.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -61,7 +61,7 @@
                         </DropShadow>
                      </effect>
                   </AnchorPane>
-                  <AnchorPane fx:id="bikeButton" layoutX="13.0" layoutY="161.0" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: WHITE;">
+                  <AnchorPane layoutX="13.0" layoutY="161.0" onMouseClicked="#bikeButton" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: WHITE;">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -82,7 +82,7 @@
                         </DropShadow>
                      </effect>
                   </AnchorPane>
-                  <AnchorPane fx:id="carButton" layoutX="13.0" layoutY="229.0" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: white;">
+                  <AnchorPane layoutX="13.0" layoutY="229.0" onMouseClicked="#carButton" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -103,7 +103,7 @@
                         </DropShadow>
                      </effect>
                   </AnchorPane>
-                  <AnchorPane fx:id="sellVehicleButton" layoutX="13.0" layoutY="296.0" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: white;">
+                  <AnchorPane layoutX="13.0" layoutY="296.0" onMouseClicked="#sellVehicleButton" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -124,7 +124,7 @@
                         </DropShadow>
                      </effect>
                   </AnchorPane>
-                  <AnchorPane fx:id="profileButton" layoutX="13.0" layoutY="363.0" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: #00ff84;">
+                  <AnchorPane layoutX="13.0" layoutY="363.0" onMouseClicked="#profileButton" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: #00ff84;">
                      <children>
                         <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -145,7 +145,7 @@
                         </DropShadow>
                      </effect>
                   </AnchorPane>
-                  <AnchorPane fx:id="logoutButton" layoutX="13.0" layoutY="634.0" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: BLACK;">
+                  <AnchorPane layoutX="13.0" layoutY="634.0" onMouseClicked="#logoutButton" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: BLACK;">
                      <children>
                         <ImageView fitHeight="23.0" fitWidth="30.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -177,7 +177,7 @@
             </AnchorPane>
             <HBox alignment="CENTER" layoutX="908.0" layoutY="8.0" prefHeight="58.0" prefWidth="329.0" style="-fx-background-color: #1a1a1a; -fx-background-radius: 12;">
                <children>
-                  <ImageView fx:id="refreshButton" fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="34.0" fitWidth="31.0" onMouseClicked="#refreshButtonCorner" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Images/refresh.png" />
                      </image>
@@ -185,17 +185,17 @@
                         <Insets right="30.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fx:id="savedButton" fitHeight="26.0" fitWidth="26.0" layoutX="152.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="132.0" layoutY="23.0" onMouseClicked="#chatButtonCorner" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../Images/favorite.png" />
+                        <Image url="@../../../../Images/message.png" />
                      </image>
                      <HBox.margin>
                         <Insets right="30.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fx:id="chatButton" fitHeight="25.0" fitWidth="28.0" layoutX="132.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="152.0" layoutY="25.0" onMouseClicked="#savedButtonCorner" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../Images/message.png" />
+                        <Image url="@../../../../Images/favorite.png" />
                      </image>
                      <HBox.margin>
                         <Insets right="50.0" />
@@ -225,7 +225,7 @@
             </Label>
             <AnchorPane layoutX="232.0" layoutY="99.0" prefHeight="661.0" prefWidth="671.0" style="-fx-background-color: #1a1a1a; -fx-background-radius: 12;">
                <children>
-                  <TextField fx:id="ownerInputBox" layoutX="201.0" layoutY="277.0" prefHeight="40.0" prefWidth="292.0" style="-fx-background-color: #292929;">
+                  <TextField fx:id="usernameInputBox" layoutX="201.0" layoutY="277.0" prefHeight="40.0" prefWidth="292.0" style="-fx-background-color: #292929;">
                      <effect>
                         <Bloom />
                      </effect>
@@ -242,7 +242,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="58.0" fitWidth="81.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="profileImage" fitHeight="58.0" fitWidth="81.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../Images/refresh.png" />
                            </image>
@@ -254,12 +254,12 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="imageUploadButton" layoutX="230.0" layoutY="154.0" mnemonicParsing="false" opacity="0.7" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: #ffbd22;" text="Upload">
+                  <Button layoutX="230.0" layoutY="154.0" mnemonicParsing="false" onAction="#imageUploadButton" opacity="0.7" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: #ffbd22;" text="Upload">
                      <font>
                         <Font name="Montserrat Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="imageDeleteButton" layoutX="360.0" layoutY="154.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: #bcbcbc;" text="Delete">
+                  <Button layoutX="360.0" layoutY="154.0" mnemonicParsing="false" onAction="#imageDeleteButton" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: #bcbcbc;" text="Delete">
                      <font>
                         <Font name="Montserrat Bold" size="12.0" />
                      </font>
@@ -269,7 +269,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="ownerInputBox1" layoutX="201.0" layoutY="366.0" prefHeight="40.0" prefWidth="292.0" style="-fx-background-color: #292929;">
+                  <TextField fx:id="passwordInputBox" layoutX="201.0" layoutY="366.0" prefHeight="40.0" prefWidth="292.0" style="-fx-background-color: #292929;">
                      <effect>
                         <Bloom />
                      </effect>

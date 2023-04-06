@@ -121,7 +121,7 @@
                   </DropShadow>
                </effect>
             </AnchorPane>
-            <AnchorPane fx:id="profileButton" layoutX="13.0" layoutY="363.0" onMouseClicked="#onProfileButtonClicked" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: WHITE;">
+            <AnchorPane layoutX="13.0" layoutY="363.0" onMouseClicked="#onProfileButtonClicked" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 12; -fx-background-color: WHITE;">
                <children>
                   <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -257,7 +257,7 @@
                   <Insets bottom="5.0" left="30.0" top="5.0" />
                </HBox.margin>
                <children>
-                  <ImageView fx:id="userImage" fitHeight="31.0" fitWidth="30.0" layoutX="9.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="31.0" fitWidth="30.0" layoutX="9.0" layoutY="9.0" onMouseClicked="#ProfileButtonCorner" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Images/cycling.png" />
                      </image>

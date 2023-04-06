@@ -201,9 +201,19 @@ public class AdminAddVehicleController {
                 statement.setString(5, service_type);
                 statement.setBlob(6, fileInputStream);
 
-
                 statement.execute();
+
+
                 System.out.println("Inserted Successfully...");
+
+                fileInputStream = null;
+
+                postedByInputBox.setText("");
+                vehicleCategoryInputBox.setText("");
+                areaInputBox.setText("");
+                postedByInputBox.setText("");
+                rateInputBox.setText("");
+                circle.setFill(null);
 
                 fileInputStream.close();
                 connection.close();
