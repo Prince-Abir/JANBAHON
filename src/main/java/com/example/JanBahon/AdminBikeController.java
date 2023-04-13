@@ -91,9 +91,9 @@ public class AdminBikeController implements Initializable {
                 }
                 String Rate = String.valueOf(rate);
 
-                if (Objects.equals(category, "Bike")){
+                if (category.compareToIgnoreCase("Bike") == 0){
                     if (Objects.equals(service_type,"Rent")){
-                        vehicleObservableList.add(new vehicle(owner,category,area,Rate,image,service_type,new Button("Delete")));
+                        vehicleObservableList.add(new vehicle(id,owner,category,area,Rate,image,service_type,new Button("Delete")));
                     }
 
                 }

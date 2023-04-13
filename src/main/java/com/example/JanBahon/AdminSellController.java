@@ -27,19 +27,14 @@ import java.util.ResourceBundle;
 
 public class AdminSellController implements Initializable {
 
+    public Parent root;
+    public ObservableList<vehicle> vehicleObservableList;
     @FXML
     private ListView<vehicle> listView;
-
     @FXML
     private ImageView userImage;
 
-    public Parent root;
-
-
-    public ObservableList<vehicle> vehicleObservableList;
-
     public AdminSellController() throws SQLException {
-
 
 
         vehicleObservableList = FXCollections.observableArrayList();
@@ -61,7 +56,6 @@ public class AdminSellController implements Initializable {
         getItemsFromDB();
 
 
-
     }
 
     public void getItemsFromDB() throws SQLException {
@@ -69,14 +63,14 @@ public class AdminSellController implements Initializable {
         DbConnection dbConnection = new DbConnection();
         Connection connection = dbConnection.connect();
 
-        if (connection != null){
+        if (connection != null) {
             String sql = "SELECT * FROM vehicle";
 
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 Image image = null;
                 int id = resultSet.getInt("id");
                 String owner = resultSet.getString("owner");
@@ -85,18 +79,16 @@ public class AdminSellController implements Initializable {
                 int rate = resultSet.getInt("rate");
                 String service_type = resultSet.getString("service_type");
                 Blob blob = resultSet.getBlob("image");
-                if (blob!= null){
-                    InputStream inputStream =  blob.getBinaryStream();
+                if (blob != null) {
+                    InputStream inputStream = blob.getBinaryStream();
                     image = new Image(inputStream);
                 }
                 String Rate = String.valueOf(rate);
 
 
-                if (Objects.equals(service_type,"Sell")){
-                        vehicleObservableList.add(new vehicle(owner,category,area,Rate,image,service_type,new Button("Delete")));
-                    }
-
-
+                if (Objects.equals(service_type, "Sell")) {
+                    vehicleObservableList.add(new vehicle(id, owner, category, area, Rate, image, service_type, new Button("Delete")));
+                }
 
 
             }

@@ -4,7 +4,6 @@ import com.example.JanBahon.Database.DbConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,9 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -31,14 +28,13 @@ public class AdminCycleController implements Initializable {
     @FXML
     private ListView<vehicle> listView;
 
-    @FXML
-    private ImageView userImage;
-
     public Parent root;
 
 
 
     public ObservableList<vehicle> vehicleObservableList;
+
+
 
     public AdminCycleController() throws SQLException {
 
@@ -46,25 +42,14 @@ public class AdminCycleController implements Initializable {
 
         vehicleObservableList = FXCollections.observableArrayList();
 
-        //add some Students
-        vehicleObservableList.addAll(
-//                new vehicle("Admin", "Cycle", "Malibag", "40/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle1.jpg"))),"Rent", new Button("Rent")),
-//                new vehicle("Admin", "Cycle", "Rajarbag", "45/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle2.jpg"))),"Rent", new Button("Rent"))
-//                new vehicle("Admin", "Cycle", "Savar", "35/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle3.jpg"))),"Rent", new Button("Rent")),
-//                new vehicle("Admin", "Cycle", "Badda", "40/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle4.jpg"))),"Rent", new Button("Rent")),
-//                new vehicle("Admin", "Cycle", "Paltan", "50/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle5.jpg"))),"Rent", new Button("Rent")),
-//                new vehicle("Admin", "Cycle", "Malibag", "40/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle1.jpg"))),"Rent", new Button("Rent")),
-//                new vehicle("Admin", "Cycle", "Rajarbag", "45/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle2.jpg"))),"Rent", new Button("Rent")),
-//                new vehicle("Admin", "Cycle", "Savar", "35/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle3.jpg"))),"Rent", new Button("Rent")),
-//                new vehicle("Admin", "Cycle", "Badda", "40/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle4.jpg"))),"Rent", new Button("Rent")),
-//                new vehicle("Admin", "Cycle", "Paltan", "50/hr", new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/cycle5.jpg"))),"Rent", new Button("Rent"))
-        );
+        //vehicleObservableList.addAll()
 
         getItemsFromDB();
 
 
 
     }
+
 
     public void getItemsFromDB() throws SQLException {
 
@@ -93,18 +78,21 @@ public class AdminCycleController implements Initializable {
                 }
                 String Rate = String.valueOf(rate);
 
-                if (Objects.equals(category, "Cycle")){
+                if (category.compareToIgnoreCase("Cycle") == 0){
                     if (Objects.equals(service_type,"Rent")){
-                        vehicleObservableList.add(new vehicle(owner,category,area,Rate,image,service_type,new Button("Delete")));
+                        vehicleObservableList.add(new vehicle(id,owner,category,area,Rate,image,service_type,new Button("Delete")));
                     }
 
                 }
 
 
             }
+            connection.close();
         }
 
+
     }
+
 
 
     @FXML
@@ -116,18 +104,17 @@ public class AdminCycleController implements Initializable {
         stage.setTitle("Add New Vehicle");
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
     void onAddVehicleButton2(ActionEvent event) throws IOException {
-
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Admin/adminAddVehicle.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setTitle("Add New Vehicle");
         stage.setScene(scene);
         stage.show();
+
     }
 
     @FXML
@@ -139,7 +126,6 @@ public class AdminCycleController implements Initializable {
         stage.setTitle("Rent a Bike");
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
@@ -151,7 +137,6 @@ public class AdminCycleController implements Initializable {
         stage.setTitle("Rent a Car");
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
@@ -163,7 +148,6 @@ public class AdminCycleController implements Initializable {
         stage.setTitle("Rent a Cycle");
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
@@ -173,6 +157,43 @@ public class AdminCycleController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setTitle("Jan Bahon");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+
+    @FXML
+    void onProfileButtonClicked(MouseEvent event) throws IOException {
+
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Admin/adminProfile.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setTitle("Profile Settings");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+
+    @FXML
+    void onSellButtonClicked(MouseEvent event) throws IOException {
+
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Admin/adminSell.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setTitle("Add New Vehicle");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void onSellProductButtonClicked(ActionEvent event) throws IOException {
+
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Admin/adminSell.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setTitle("Add New Vehicle");
         stage.setScene(scene);
         stage.show();
 
@@ -193,45 +214,13 @@ public class AdminCycleController implements Initializable {
 
     }
 
-    @FXML
-    void onSellButtonClicked(MouseEvent event) throws IOException {
-
-
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Admin/adminSell.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setTitle("Add New Vehicle");
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    @FXML
-    void onProfileButtonClicked(MouseEvent event) throws IOException {
-
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Admin/adminProfile.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setTitle("Add New Vehicle");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    void onSellProductButtonClicked(ActionEvent event) throws IOException {
-
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Admin/adminSell.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setTitle("Add New Vehicle");
-        stage.setScene(scene);
-        stage.show();
-    }
 
     @FXML
     void ProfileButtonCorner(MouseEvent event) {
 
     }
+
+
 
 
     @Override
@@ -243,4 +232,8 @@ public class AdminCycleController implements Initializable {
 
 
     }
+
+
+
 }
+

@@ -42,7 +42,7 @@
                   <Image url="@../../../Images/cycling.png" />
                </image>
             </ImageView>
-            <Button fx:id="rentButton" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #1a1a1a;" text="Rent" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="DeleteButton" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #1a1a1a;" text="Delete" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Open Sans Bold" size="14.0" />
                </font>

@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 
 public class vehicle {
+    int vehicleId;
     private String owner_name;
     private String category;
     private String location;
@@ -13,7 +14,9 @@ public class vehicle {
     private String serviceType;
     private Button button;
 
-    public vehicle(String postedBy, String category, String location, String price, Image image,String serviceType,Button button) {
+    public vehicle(int id,String postedBy, String category, String location, String price, Image image,String serviceType,Button button) {
+
+        this.vehicleId = id;
         this.owner_name = postedBy;
         this.category = category;
         this.location = location;
@@ -21,6 +24,14 @@ public class vehicle {
         this.image = image;
         this.serviceType = serviceType;
         this.button = button;
+    }
+
+    public int getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(int vehicleId) {
+        this.vehicleId = vehicleId;
     }
 
     public String getOwner_name() {

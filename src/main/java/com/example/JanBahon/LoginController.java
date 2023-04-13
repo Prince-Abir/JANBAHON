@@ -63,34 +63,42 @@ public class LoginController {
             alert.show();
         } else {
 
-            statement = connection.prepareStatement(query);
-            result = statement.executeQuery();
+            if (userCategory.getToggles().get(1) == userCategory.getSelectedToggle()) {
+                statusText.setText("User");
 
-            if (result.next()) {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Admin/adminAddVehicle.fxml")));
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                Scene scene = new Scene(root);
-                stage.setTitle("JAN BAHON");
-                stage.setScene(scene);
-                stage.show();
+            } else if (userCategory.getToggles().get(0) == userCategory.getSelectedToggle()) {
 
+                statement = connection.prepareStatement(query);
+                result = statement.executeQuery();
+
+                if (result.next()) {
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Admin/adminAddVehicle.fxml")));
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setTitle("JAN BAHON");
+                    stage.setScene(scene);
+                    stage.show();
+
+                } else {
+
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText("user not found! ");
+                    alert.show();
+                }
+
+                statusText.setText("Admin");
             } else {
 
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText("user not found! ");
-                alert.show();
+                statusText.setText("Please Select a user Type");
             }
 
+
+
+
         }
 
 
-        if (userCategory.getToggles().get(1) == userCategory.getSelectedToggle()) {
 
-        } else if (userCategory.getToggles().get(0) == userCategory.getSelectedToggle()) {
-            statusText.setText("Admin");
-        } else {
-            statusText.setText("Please Select a user Type");
-        }
 
 
     }
